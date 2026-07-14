@@ -1,6 +1,5 @@
-package com.example.ocp;
+package com.example.ocp.locks;
 
-import com.example.ocp.locks.LockService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
