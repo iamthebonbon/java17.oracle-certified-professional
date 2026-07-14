@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Map;
+import java.util.UUID;
 
 public class FileTest {
 
@@ -25,6 +26,15 @@ public class FileTest {
         URL url = Main.class.getClassLoader().getResource("file.txt");
         File file = new File(url.toURI());
         Assertions.assertEquals("halo, i'm a Lohan Lindsey\n", Files.readString(file.toPath()));
+    }
+
+    @Test
+    public void createDirTest() throws IOException {
+        File dir = new File(UUID.randomUUID().toString());
+        Assertions.assertTrue(dir.mkdirs());
+        Assertions.assertTrue(dir.isDirectory());
+        Assertions.assertTrue(dir.exists());
+        dir.deleteOnExit();
     }
 
 }
