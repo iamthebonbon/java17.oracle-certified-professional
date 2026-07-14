@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ArraysTest {
@@ -140,6 +139,34 @@ public class ArraysTest {
         Assertions.assertEquals(
                 "[1, 5, 5, 4]",
                 Arrays.stream(new String[]{"1", "5", "5", "4"}).collect(Collectors.toList()).toString()
+        );
+    }
+
+    @Test
+    public void arraysSortIntsTest() {
+        int[] ints = {3, 1, 2, 4};
+        Assertions.assertEquals(
+                "[3, 1, 2, 4]",
+                Arrays.toString(ints)
+        );
+        Arrays.sort(ints);
+        Assertions.assertEquals(
+                "[1, 2, 3, 4]",
+                Arrays.toString(ints)
+        );
+    }
+
+    @Test
+    public void arraysSortStringsTest() {
+        String[] strings = {"3", "1", "2", "4"};
+        Assertions.assertEquals(
+                "[3, 1, 2, 4]",
+                Arrays.toString(strings)
+        );
+        Arrays.sort(strings);
+        Assertions.assertEquals(
+                "[1, 2, 3, 4]",
+                Arrays.toString(strings)
         );
     }
 
