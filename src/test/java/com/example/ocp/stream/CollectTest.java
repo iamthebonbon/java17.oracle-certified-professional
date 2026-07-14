@@ -1,4 +1,4 @@
-package com.example.ocp.hyperskill;
+package com.example.ocp.stream;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,22 +9,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FunctionalProgrammingTest {
-    private static final Logger LOGGER = Logger.getLogger(FunctionalProgrammingTest.class.getName());
+public class CollectTest {
+    private static final Logger LOGGER = Logger.getLogger(CollectTest.class.getName());
 
     /**
      * https://hyperskill.org/learn/step/2449
      */
     @Test
-    public void streamPipelinesTest() {
+    public void collectTest() {
         String input = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales consectetur purus at faucibus. Donec mi quam, tempor vel ipsum non, faucibus suscipit massa. Morbi lacinia velit blandit tincidunt efficitur. Vestibulum eget metus imperdiet sapien laoreet faucibus. Nunc eget vehicula mauris, ac auctor lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel odio nec mi tempor dignissim.";
         Stream.of(input.toLowerCase().replaceAll("[^A-Za-z0-9 ]", "").split(" "))
                 .collect(
@@ -75,7 +73,7 @@ public class FunctionalProgrammingTest {
      * https://hyperskill.org/learn/step/2281
      */
     @Test
-    public void test2() {
+    public void finalizerTest() {
         String number = "090234";
         var array = number.split("");
 
@@ -95,7 +93,6 @@ public class FunctionalProgrammingTest {
                                 )
                         )
         );
-
     }
 
     @Test
