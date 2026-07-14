@@ -15,8 +15,8 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class CollectTest {
-    private static final Logger LOGGER = Logger.getLogger(CollectTest.class.getName());
+public class GeneralStreamTest {
+    private static final Logger LOGGER = Logger.getLogger(GeneralStreamTest.class.getName());
 
     /**
      * https://hyperskill.org/learn/step/2449
