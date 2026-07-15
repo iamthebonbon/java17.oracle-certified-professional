@@ -1,5 +1,6 @@
 package com.example.ocp.stream;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,12 +16,9 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class GeneralStreamTest {
-    private static final Logger LOGGER = Logger.getLogger(GeneralStreamTest.class.getName());
+public class GenericStreamTest {
+    private static final Logger LOGGER = Logger.getLogger(GenericStreamTest.class.getName());
 
-    /**
-     * https://hyperskill.org/learn/step/2449
-     */
     @Test
     public void collectTest() {
         String input = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales consectetur purus at faucibus. Donec mi quam, tempor vel ipsum non, faucibus suscipit massa. Morbi lacinia velit blandit tincidunt efficitur. Vestibulum eget metus imperdiet sapien laoreet faucibus. Nunc eget vehicula mauris, ac auctor lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel odio nec mi tempor dignissim.";
@@ -69,15 +67,13 @@ public class GeneralStreamTest {
                 .forEach(System.out::println);
     }
 
-    /**
-     * https://hyperskill.org/learn/step/2281
-     */
     @Test
     public void finalizerTest() {
         String number = "090234";
         var array = number.split("");
 
-        System.out.println(
+        Assertions.assertEquals(
+                9,
                 Arrays.stream(Arrays.copyOfRange(array, 0, 3))
                         .parallel()
                         .map(Integer::parseInt)
