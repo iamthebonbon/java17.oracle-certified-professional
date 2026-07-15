@@ -1,4 +1,4 @@
-package com.example.ocp.file;
+package com.example.ocp.io;
 
 import com.example.ocp.Main;
 import org.junit.jupiter.api.Assertions;
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.Map;
 import java.util.UUID;
 
 public class FileTest {
