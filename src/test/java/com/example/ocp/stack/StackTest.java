@@ -15,6 +15,7 @@ public class StackTest {
         integers.push(1);
         integers.push(2);
         integers.push(3);
+        Assertions.assertEquals("[1, 2, 3]", integers.toString());
         Assertions.assertEquals(3, integers.pop());
     }
 
@@ -36,8 +37,8 @@ public class StackTest {
 
     @Test
     public void dequePushTest() {
-        Deque<String> states = new ArrayDeque<String>();
-        states.push("4");
+        Deque<String> states = new ArrayDeque<>();
+        states.push("4"); // to head
         states.push("2");
         states.push("1");
         states.push("5");
@@ -45,9 +46,9 @@ public class StackTest {
     }
 
     @Test
-    public void dequeOfferTest() {
-        Deque<String> states = new ArrayDeque<String>();
-        states.offer("4");
+    public void test() {
+        Deque<String> states = new ArrayDeque<>();
+        states.offer("4"); // to tail
         states.offer("2");
         states.offer("1");
         states.offer("5");
@@ -56,19 +57,19 @@ public class StackTest {
 
     @Test
     public void dequeOfferFirstLastTest() {
-        Deque<String> states = new ArrayDeque<String>();
-        states.offer("4");
+        Deque<String> states = new ArrayDeque<>();
+        states.offer("4"); // to tail
         states.offer("2");
         states.offer("1");
         states.offer("5");
-        states.offerFirst("6");
-        states.offerLast("7");
+        states.offerFirst("6"); // to head
+        states.offerLast("7"); // to tail
         Assertions.assertEquals("[6, 4, 2, 1, 5, 7]", states.toString());
     }
 
     @Test
     public void dequeAddTest() {
-        Deque<String> states = new ArrayDeque<String>();
+        Deque<String> states = new ArrayDeque<>();
         states.add("4");
         states.add("2");
         states.add("1");
@@ -78,14 +79,46 @@ public class StackTest {
 
     @Test
     public void dequeAddFirstLastTest() {
-        Deque<String> states = new ArrayDeque<String>();
+        Deque<String> states = new ArrayDeque<>();
+        states.add("4"); // to tail
+        states.add("2");
+        states.add("1");
+        states.add("5");
+        states.addFirst("6"); // to head
+        states.addLast("7");
+        Assertions.assertEquals("[6, 4, 2, 1, 5, 7]", states.toString());
+    }
+
+    /**
+     * take from head
+     */
+    @Test
+    public void dequePopPollTest() {
+        Deque<String> states = new ArrayDeque<>();
         states.add("4");
         states.add("2");
         states.add("1");
         states.add("5");
         states.addFirst("6");
         states.addLast("7");
-        Assertions.assertEquals("[6, 4, 2, 1, 5, 7]", states.toString());
+        Assertions.assertEquals("6", states.poll());
+        Assertions.assertEquals("4", states.pop());
+    }
+
+    /**
+     * take from head
+     */
+    @Test
+    public void dequeOfferTest() {
+        Deque<String> states = new ArrayDeque<>();
+        states.add("4");
+        states.add("2");
+        states.add("1");
+        states.add("5");
+        states.addFirst("6");
+        states.addLast("7");
+        Assertions.assertEquals("7", states.removeLast());
+        Assertions.assertEquals("5", states.pollLast());
     }
 
 }
