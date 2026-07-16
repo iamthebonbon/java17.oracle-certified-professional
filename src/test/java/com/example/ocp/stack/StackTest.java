@@ -70,7 +70,7 @@ public class StackTest {
     @Test
     public void dequeAddTest() {
         Deque<String> states = new ArrayDeque<>();
-        states.add("4");
+        states.add("4"); // to tail
         states.add("2");
         states.add("1");
         states.add("5");
@@ -119,6 +119,26 @@ public class StackTest {
         states.addLast("7");
         Assertions.assertEquals("7", states.removeLast());
         Assertions.assertEquals("5", states.pollLast());
+    }
+
+    @Test
+    public void ttt() {
+        char[] chars = "[{(]})".toCharArray();
+        Deque<Character> brackets = new ArrayDeque<>();
+        String openingBrackets = "([{";
+        String closingBrackets = ")]}";
+
+        boolean result = false;
+        for (char c : chars) {
+            if (openingBrackets.indexOf(c) > -1) {
+                brackets.add(c);
+                result = false;
+            } else if (closingBrackets.indexOf(c) > -1) {
+                Character bracket = brackets.pollLast();
+                result = bracket != null && openingBrackets.indexOf(bracket) == closingBrackets.indexOf(c);
+            }
+        }
+        System.out.println(result);
     }
 
 }
