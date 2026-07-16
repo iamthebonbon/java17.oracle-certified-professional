@@ -5,11 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import static java.time.DayOfWeek.MONDAY;
 
 public class LocalDateTest {
+
+    @Test
+    public void parseTest() {
+        Assertions.assertEquals(
+                "1994-05-25",
+                LocalDate.parse("25-05-1994", DateTimeFormatter.ofPattern("dd-MM-yyyy")).toString()
+        );
+    }
 
     @Test
     public void testOfYearDay() {
