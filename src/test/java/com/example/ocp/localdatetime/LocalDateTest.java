@@ -13,6 +13,13 @@ import static java.time.DayOfWeek.MONDAY;
 public class LocalDateTest {
 
     @Test
+    public void constantsTest() {
+        Assertions.assertEquals("1970-01-01", LocalDate.EPOCH.toString());
+        Assertions.assertEquals("-999999999-01-01", LocalDate.MIN.toString());
+        Assertions.assertEquals("+999999999-12-31", LocalDate.MAX.toString());
+    }
+
+    @Test
     public void parseTest() {
         Assertions.assertEquals(
                 "1994-05-25",
