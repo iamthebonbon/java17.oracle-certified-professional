@@ -93,8 +93,17 @@ public class GenericStreamTest {
 
     @Test
     public void test() {
-        Stream.of(1, 2, 3)
-                .collect(Collectors.toSet());
+        Long collect = Stream.of(1, 2, 3)
+                .collect(
+                        () -> new long[1],
+                        (s, i) -> {
+                            s[0] += i;
+                        },
+                        (c1, c2) -> {
+
+                        }
+                )[0];
+        Assertions.assertEquals(6L, collect);
     }
 
 }
