@@ -34,4 +34,58 @@ public class StackTest {
         Assertions.assertEquals("[2, 4, 5, 6]", integers.toString());
     }
 
+    @Test
+    public void dequePushTest() {
+        Deque<String> states = new ArrayDeque<String>();
+        states.push("4");
+        states.push("2");
+        states.push("1");
+        states.push("5");
+        Assertions.assertEquals("[5, 1, 2, 4]", states.toString());
+    }
+
+    @Test
+    public void dequeOfferTest() {
+        Deque<String> states = new ArrayDeque<String>();
+        states.offer("4");
+        states.offer("2");
+        states.offer("1");
+        states.offer("5");
+        Assertions.assertEquals("[4, 2, 1, 5]", states.toString());
+    }
+
+    @Test
+    public void dequeOfferFirstLastTest() {
+        Deque<String> states = new ArrayDeque<String>();
+        states.offer("4");
+        states.offer("2");
+        states.offer("1");
+        states.offer("5");
+        states.offerFirst("6");
+        states.offerLast("7");
+        Assertions.assertEquals("[6, 4, 2, 1, 5, 7]", states.toString());
+    }
+
+    @Test
+    public void dequeAddTest() {
+        Deque<String> states = new ArrayDeque<String>();
+        states.add("4");
+        states.add("2");
+        states.add("1");
+        states.add("5");
+        Assertions.assertEquals("[4, 2, 1, 5]", states.toString());
+    }
+
+    @Test
+    public void dequeAddFirstLastTest() {
+        Deque<String> states = new ArrayDeque<String>();
+        states.add("4");
+        states.add("2");
+        states.add("1");
+        states.add("5");
+        states.addFirst("6");
+        states.addLast("7");
+        Assertions.assertEquals("[6, 4, 2, 1, 5, 7]", states.toString());
+    }
+
 }
