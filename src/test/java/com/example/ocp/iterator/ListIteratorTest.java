@@ -18,8 +18,6 @@ public class ListIteratorTest {
             String item = iterator.previous();
             System.out.println(item);
         }
-
-        
     }
 
 }
