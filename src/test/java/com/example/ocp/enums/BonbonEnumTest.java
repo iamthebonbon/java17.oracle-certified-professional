@@ -35,4 +35,13 @@ public class BonbonEnumTest {
         );
     }
 
+    @Test
+    public void enumSetOftTest() {
+        EnumSet<BonbonEnum> bonbonEnums = EnumSet.of(BonbonEnum.TWO, BonbonEnum.THREE);
+        Assertions.assertEquals(
+                "[TWO, THREE]",
+                bonbonEnums.toString()
+        );
+    }
+
 }
