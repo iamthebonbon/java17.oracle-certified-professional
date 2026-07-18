@@ -22,6 +22,31 @@ public class ArithmeticTest {
     }
 
     @Test
+    public void byteTest() {
+        byte lbt = 1;
+        lbt++;
+        Assertions.assertEquals(2, lbt);
+        Assertions.assertEquals(3, ++lbt);
+        int li = lbt;
+        Assertions.assertEquals(3, li);
+        li = 200;
+        Assertions.assertEquals(3, lbt);
+        lbt = (byte) 200;
+        Assertions.assertEquals(-56, lbt);
+        lbt = (byte) 130;
+        Assertions.assertEquals(-126, lbt);
+    }
+
+    @Test
+    public void floatTest() {
+        Assertions.assertEquals(3.4028235E38f, Float.MAX_VALUE);
+        Assertions.assertEquals(3.4028235E38f, Float.MAX_VALUE + 1);
+        Assertions.assertEquals(Float.POSITIVE_INFINITY, Float.MAX_VALUE * 2);
+        Assertions.assertEquals(340282350000000000000000000000000000000f, Float.MAX_VALUE);
+        Assertions.assertEquals(1.7976931348623157E308, Double.MAX_VALUE);
+    }
+
+    @Test
     public void primitiveDefaults() {
         Assertions.assertEquals(false, b);
         Assertions.assertEquals(0, bt);
