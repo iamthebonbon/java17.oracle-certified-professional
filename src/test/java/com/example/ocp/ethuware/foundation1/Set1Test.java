@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.function.IntFunction;
 
 public class Set1Test {
 
@@ -99,12 +100,18 @@ public class Set1Test {
     @Test
     public void question26() {
         Assertions.assertEquals("  bonbon\n", "bonbon".indent(2));
-        Assertions.assertEquals("bon \t bon", " \t bon \t bon \t ".trim());
-        Assertions.assertEquals("bon \t bon", " \t bon \t bon \t ".strip());
+        Assertions.assertEquals("  \t bon \t bon", "\u2001 \t bon \t bon \t ".trim());
+        Assertions.assertEquals("bon \t bon", "\u2000 \t bon \t bon \t ".strip());
         Assertions.assertTrue("".isEmpty());
         Assertions.assertFalse(" ".isEmpty());
         Assertions.assertFalse("\t\t".isEmpty());
         Assertions.assertTrue("\t\t".isBlank());
+    }
+
+    @Test
+    public void question27() {
+        IntFunction<String> intFunction = String::valueOf;
+        Assertions.assertEquals("1", intFunction.apply(1));
     }
 
 }

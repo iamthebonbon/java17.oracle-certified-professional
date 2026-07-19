@@ -23,4 +23,28 @@ public class StringBuilderTest {
         );
     }
 
+    @Test
+    public void textBlockTest() {
+        String templateHtml = """
+            <html>
+                <body>
+                    hello
+                </body>
+            </html>
+            """;
+        Assertions.assertEquals("" +
+                "<html>\n" +
+                "    <body>\n" +
+                "        hello\n" +
+                "    </body>\n" +
+                "</html>\n", templateHtml);
+    }
+
+    @Test
+    public void textBlock2Test() {
+        String templateHtml = """
+                """;
+        Assertions.assertEquals("", templateHtml);
+    }
+
 }
