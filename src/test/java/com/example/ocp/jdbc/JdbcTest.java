@@ -2,7 +2,6 @@ package com.example.ocp.jdbc;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,10 +17,15 @@ public class JdbcTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcTest.class);
 
     private static final PostgreSQLContainer postgres = new PostgreSQLContainer("postgres:16-alpine");
+    private static final Connection conn;
 
-    @BeforeAll
-    public static void beforeAll() {
+    static {
         postgres.start();
+        try {
+            conn = DriverManager.getConnection(postgres.getJdbcUrl(), postgres.getUsername(), postgres.getPassword());
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        }
     }
 
     @AfterAll
@@ -32,7 +36,6 @@ public class JdbcTest {
     @Test
     void connectsAndQueries() throws SQLException {
         try (
-                Connection conn = DriverManager.getConnection(postgres.getJdbcUrl(), postgres.getUsername(), postgres.getPassword());
                 Statement stmt = conn.createStatement()
         ) {
             stmt.execute("CREATE TABLE employees (id SERIAL PRIMARY KEY, name VARCHAR(100))");
@@ -47,7 +50,6 @@ public class JdbcTest {
     @Test
     void test() {
         try (
-                Connection conn = DriverManager.getConnection(postgres.getJdbcUrl(), postgres.getUsername(), postgres.getPassword());
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT name FROM employees")
         ) {
