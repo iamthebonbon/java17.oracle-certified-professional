@@ -22,6 +22,16 @@ public class ArithmeticTest {
     }
 
     @Test
+    public void shortCharTest() {
+        short s = Short.MAX_VALUE;
+        byte b = Byte.MIN_VALUE;
+        char c = (char) s;
+        char c2 = (char) b;
+        Assertions.assertEquals(32767, c);
+        Assertions.assertEquals(65408, c2);
+    }
+
+    @Test
     public void byteTest() {
         byte lbt = 1;
         lbt++;
@@ -57,29 +67,29 @@ public class ArithmeticTest {
         Assertions.assertEquals(0.0, d);
         Assertions.assertEquals(0.0f, f);
         Assertions.assertEquals(
-            "0 false 0 0 0 0.0 0.0 \u0000", 
-            String.format("%s %s %s %s %s %s %s %s", bt, b, s, i, l, f, d, c)
+                "0 false 0 0 0 0.0 0.0 \u0000",
+                String.format("%s %s %s %s %s %s %s %s", bt, b, s, i, l, f, d, c)
         );
         Assertions.assertEquals(
-            "0.00", String.format("%.2f", f)
+                "0.00", String.format("%.2f", f)
         );
         Assertions.assertEquals(
-            "0.00", String.format("%.2f", d)
+                "0.00", String.format("%.2f", d)
         );
         Assertions.assertEquals(
-            "false", String.format("%s", b)
+                "false", String.format("%s", b)
         );
         Assertions.assertEquals(
-            "0", String.format("%d", bt)
+                "0", String.format("%d", bt)
         );
         Assertions.assertEquals(
-            "0", String.format("%d", s)
+                "0", String.format("%d", s)
         );
         Assertions.assertEquals(
-            "0", String.format("%d", i)
+                "0", String.format("%d", i)
         );
         Assertions.assertEquals(
-            "0", String.format("%d", l)
+                "0", String.format("%d", l)
         );
     }
 }
