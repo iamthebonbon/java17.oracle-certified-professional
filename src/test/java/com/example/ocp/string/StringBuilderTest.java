@@ -45,6 +45,20 @@ public class StringBuilderTest {
         String templateHtml = """
                 """;
         Assertions.assertEquals("", templateHtml);
+        String one = """
+                one""";
+        Assertions.assertEquals("one", one);
+        String two = """
+                two
+                """;
+        Assertions.assertEquals("two\n", two);
+    }
+
+
+    @Test
+    public void matchTest() {
+        String stringOne = "one";
+        Assertions.assertEquals("one", stringOne.intern()); // value is placed to string-pool
     }
 
 }
