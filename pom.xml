@@ -59,13 +59,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Testcontainers JUnit 5 integration (@Testcontainers, @Container annotations) -->
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers-junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Testcontainers PostgreSQL module (PostgreSQLContainer) -->
         <dependency>
             <groupId>org.testcontainers</groupId>
