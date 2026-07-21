@@ -2,6 +2,8 @@ package com.example.ocp.genericmethod;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public class PecsTest {
     @Test
     public void test() {
         String halo = "halo";
-        List action = action(Collections.singletonList(halo));
+        List action = action(new ArrayList<>(List.of(halo)));
         action.add(new Object());
     }
 
