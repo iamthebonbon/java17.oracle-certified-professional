@@ -67,4 +67,22 @@ public class StringBuilderTest {
         Assertions.assertThrows(StringIndexOutOfBoundsException.class, () -> "one".charAt('0'));
     }
 
+    @Test
+    public void textBlockNewLineTest() {
+        String str = """
+                0123\
+                4567""";
+        Assertions.assertEquals("01234567", str);
+    }
+
+    @Test
+    public void textBlockNewLineBackslashTest() {
+        String str = """
+                0123
+                4567""";
+        Assertions.assertEquals("0123\n4567", str);
+        Assertions.assertEquals("\n45", str.substring(4, 7));
+        Assertions.assertEquals(1, "\\".length());
+    }
+
 }
