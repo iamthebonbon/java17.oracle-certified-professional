@@ -1,16 +1,16 @@
-package com.example.ocp.classes;
+package com.example.ocp.classes.local;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class LocalClassTest {
+public class FinalLocalClassTest {
     @Test
     public void test() {
         method();
     }
 
     void method() {
-        class LocalClass {
+        final class LocalClass {
             private final char c;
 
             public LocalClass() {
