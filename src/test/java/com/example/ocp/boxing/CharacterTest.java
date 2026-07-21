@@ -3,7 +3,7 @@ package com.example.ocp.boxing;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CharTest {
+public class CharacterTest {
 
     @Test
     public void test() {
