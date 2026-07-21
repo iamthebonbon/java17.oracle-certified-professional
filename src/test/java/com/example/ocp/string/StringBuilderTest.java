@@ -85,4 +85,25 @@ public class StringBuilderTest {
         Assertions.assertEquals(1, "\\".length());
     }
 
+    static String[] days = {"monday", "tuesday", "wednesday", "thursday",
+            "friday", "saturday", "sunday"};
+
+    @Test
+    public void main() {
+
+        var index = 0;
+        for (var day : days) {
+            if (index == 3) {
+                break;
+            } else {
+                continue;
+            }
+//            index++;
+//            if (days[index].length() > 3) {
+//                days[index] = day.substring(0, 3);
+//            }
+        }
+        System.out.println(days[index]);
+    }
+
 }
