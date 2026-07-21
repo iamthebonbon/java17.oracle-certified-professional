@@ -7,4 +7,9 @@ public class ConcreteClass extends AbstractClass {
         return 1;
     }
 
+    @Override
+    public int exception() {
+        return 1;
+    }
+
 }
