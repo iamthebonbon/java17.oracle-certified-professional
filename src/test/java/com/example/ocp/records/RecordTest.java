@@ -20,6 +20,11 @@ public class RecordTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new TestRecord(""));
     }
 
+    @Test
+    public void test1() {
+        Assertions.assertEquals("title is overridden", new RecordClass(0, "title").name());
+    }
+
     public static record TestRecord(int id, String title) {
         public TestRecord {
             if (id < 0) {
