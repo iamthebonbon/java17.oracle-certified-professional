@@ -26,12 +26,12 @@ public class StringBuilderTest {
     @Test
     public void textBlockTest() {
         String templateHtml = """
-            <html>
-                <body>
-                    hello
-                </body>
-            </html>
-            """;
+                <html>
+                    <body>
+                        hello
+                    </body>
+                </html>
+                """;
         Assertions.assertEquals("" +
                 "<html>\n" +
                 "    <body>\n" +
@@ -59,6 +59,12 @@ public class StringBuilderTest {
     public void matchTest() {
         String stringOne = "one";
         Assertions.assertEquals("one", stringOne.intern()); // value is placed to string-pool
+    }
+
+    @Test
+    public void charAtExceptionTest() {
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> "one".charAt('0'));
+        Assertions.assertThrows(StringIndexOutOfBoundsException.class, () -> "one".charAt('0'));
     }
 
 }
