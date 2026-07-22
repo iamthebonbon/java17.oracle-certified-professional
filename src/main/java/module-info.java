@@ -1,4 +1,4 @@
-module _$123com.example.java.oracle.certified.professional {
+module com.example.java.oracle.certified.professional {
     requires java.sql;
 }
 // First character	Letter, $, or _
