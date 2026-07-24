@@ -40,6 +40,16 @@ public class VariableDeclarationTest {
     }
 
     @Test
+    public void testArrayListArray() {
+        List<String[]> a = new ArrayList<String[]>();
+        String[] strings = new String[]{};
+        a.add(strings);
+        Assertions.assertTrue(1 == a.size());
+        Assertions.assertTrue(strings == a.get(0));
+        Assertions.assertEquals("java.util.ArrayList", a.getClass().getName());
+    }
+
+    @Test
     public void test() {
         int[] a = new int[2];
         int[] b, c = new int[2], d;
