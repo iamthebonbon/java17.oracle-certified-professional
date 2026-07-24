@@ -7,6 +7,10 @@ public class DoubleTest {
 
     @Test
     public void test() {
+        double d = 1;
+        float f = 1;
+        Assertions.assertTrue(1.0f == f);
+        Assertions.assertTrue(1.0 == d);
         Assertions.assertTrue("10000.1234567".equals(String.valueOf(10000.1234567000)));
         Assertions.assertTrue("10000.1234".equals(String.valueOf(10000.1234000)));
         Assertions.assertTrue("10000.0".equals(String.valueOf(10000.00)));
