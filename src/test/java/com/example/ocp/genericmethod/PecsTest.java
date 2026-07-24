@@ -9,6 +9,10 @@ import java.util.List;
 
 public class PecsTest {
 
+    /**
+     * Producer (read) from extends
+     * Consumer (put/add) to super
+     */
     @Test
     public void test() {
         String halo = "halo";
