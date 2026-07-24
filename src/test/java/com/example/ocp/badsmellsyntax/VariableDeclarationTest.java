@@ -50,6 +50,12 @@ public class VariableDeclarationTest {
     }
 
     @Test
+    public void testArrayListAnotherOneCaseArray() {
+        List[] strings = new ArrayList[]{};
+        Assertions.assertEquals("[Ljava.util.ArrayList;", strings.getClass().getName());
+    }
+
+    @Test
     public void test() {
         int[] a = new int[2];
         int[] b, c = new int[2], d;
