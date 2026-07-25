@@ -24,5 +24,10 @@ public class InterfaceTest {
         public default void actionDef() {
             action();
         }
+
+        /* final is not allowed */
+        default void finalNotAllowed() {
+
+        }
     }
 }

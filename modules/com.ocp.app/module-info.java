@@ -1,3 +1,3 @@
 module com.ocp.app {
-    requires com.ocp.greetings;
+//    requires com.ocp.greetings;
 }
