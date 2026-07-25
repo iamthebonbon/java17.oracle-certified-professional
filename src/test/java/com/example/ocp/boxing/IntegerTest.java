@@ -26,7 +26,7 @@ public class IntegerTest {
                 """.equals(exception.getMessage()));
 
         Assertions.assertTrue(Integer.parseInt("255") == Integer.parseInt("FF", 16));
-        Assertions.assertTrue(2 == Integer.parseInt("10", 2));
+        Assertions.assertTrue(Integer.valueOf(2).intValue() == Integer.parseInt("10", 2));
         Assertions.assertTrue(3 == Integer.parseInt("11", 2));
         Assertions.assertTrue(1 == Integer.parseInt("1111", 0, 1, 2));
     }
