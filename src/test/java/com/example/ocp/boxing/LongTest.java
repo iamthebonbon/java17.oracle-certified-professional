@@ -17,4 +17,16 @@ public class LongTest {
         Assertions.assertTrue(150L == i4);
     }
 
+    @Test
+    public void valueOfTest() {
+        Assertions.assertTrue(Long.valueOf(10) == Long.valueOf("A", 16));
+        Assertions.assertTrue(Long.valueOf(255) != Long.valueOf("FF", 16));
+        Assertions.assertTrue(Long.valueOf(255).equals(Long.valueOf("FF", 16)));
+    }
+
+    @Test
+    public void parseIntTest() {
+        Assertions.assertTrue(Long.parseLong("255") == Long.valueOf("FF", 16));
+    }
+
 }
