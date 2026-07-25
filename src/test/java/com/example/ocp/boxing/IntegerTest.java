@@ -15,4 +15,37 @@ public class IntegerTest {
         Assertions.assertFalse(i3 == i4);
     }
 
+    @Test
+    public void parseIntTest() {
+        NumberFormatException exception = Assertions.assertThrows(NumberFormatException.class, () -> {
+            int i1 = Integer.parseInt("123", 2);
+        });
+        Assertions.assertTrue("For input string: \"123\" under radix 2".equals(exception.getMessage()));
+        Assertions.assertTrue("""
+                For input string: \"123\" under radix 2\
+                """.equals(exception.getMessage()));
+
+        Assertions.assertTrue(Integer.parseInt("255") == Integer.parseInt("FF", 16));
+        Assertions.assertTrue(2 == Integer.parseInt("10", 2));
+        Assertions.assertTrue(3 == Integer.parseInt("11", 2));
+        Assertions.assertTrue(1 == Integer.parseInt("1111", 0, 1, 2));
+    }
+
+
+    @Test
+    public void valueOfTest() {
+        NumberFormatException exception = Assertions.assertThrows(NumberFormatException.class, () -> {
+            Integer i1 = Integer.valueOf("123", 2);
+        });
+        Assertions.assertTrue("For input string: \"123\" under radix 2".equals(exception.getMessage()));
+        Assertions.assertTrue("""
+                For input string: \"123\" under radix 2\
+                """.equals(exception.getMessage()));
+
+        Assertions.assertTrue(Integer.parseInt("3") == Integer.valueOf("11", 2));
+        Assertions.assertTrue(Integer.parseInt("3", 10) == Integer.valueOf("11", 2));
+        Assertions.assertTrue(Integer.valueOf(3) == Integer.valueOf("11", 2));
+        Assertions.assertTrue(Integer.valueOf(255).equals(Integer.valueOf("FF", 16)));
+    }
+
 }
