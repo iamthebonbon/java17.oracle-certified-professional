@@ -6,6 +6,22 @@ import org.junit.jupiter.api.Test;
 public class IntegerTest {
 
     @Test
+    public void intByte() {
+        Integer i = 1;
+        Byte b = 1;
+        Assertions.assertTrue(i == Integer.valueOf(b));
+    }
+
+    @Test
+    public void test3() {
+        Integer i = Integer.parseInt("0");
+        Integer j = i;
+        i--;
+        i++;
+        Assertions.assertTrue(i == j);
+    }
+
+    @Test
     public void test() {
         Integer i1 = 127;
         Integer i2 = 127;
