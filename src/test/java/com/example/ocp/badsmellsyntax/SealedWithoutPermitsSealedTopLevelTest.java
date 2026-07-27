@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
 
-public class SealedWithoutPermitsNestedTest {
+sealed public class SealedWithoutPermitsSealedTopLevelTest {
 
     @Test
     public void test() {
@@ -26,26 +26,8 @@ public class SealedWithoutPermitsNestedTest {
         Assertions.assertTrue(countDownLatch.getCount() == 0);
     }
 
-    sealed public interface I {
-        void test(CountDownLatch l);
-    }
-
-    non-sealed public interface II extends I {
-
-//        protected void action2() {
-// not allowed
-//        }
-
-        public int i = 0;
-        public static int ii = 0;
-
-        private void action() {
-
-        }
-
-        private static void staticAction() {
-
-        }
+    non-sealed abstract public class II extends SealedWithoutPermitsSealedTopLevelTest {
+        abstract void test(CountDownLatch l);
     }
 
 }
