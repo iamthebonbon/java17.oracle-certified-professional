@@ -13,7 +13,7 @@ public class StaticBlockTest {
     }
 
     public static class A {
-        static CountDownLatch latch = new CountDownLatch(1);
+        private static CountDownLatch latch = new CountDownLatch(1);
     }
 
     public static class B extends A {
