@@ -35,13 +35,15 @@ public class ThreeDimArray {
     public void test3() {
         String[][][] arr = {
                 {{"a", "b", "c"}, {"d", "e", null}},
-                {{"x"}, null}, {{"y"}}, {{"z", "p"}, {}}, {}
+                {{"x"}, null}, {{"y"}}, {{"z", "p"}, {}}, {}, {null}
         };
-        Assertions.assertTrue(5 == arr.length);
+        Assertions.assertTrue(6 == arr.length);
         Assertions.assertTrue("a".equals(arr[0][0][0]));
         Assertions.assertTrue(null == (arr[0][1][2]));
         Assertions.assertTrue(0 == (arr[3][1].length));
         Assertions.assertTrue(0 == arr[4].length);
+        Assertions.assertTrue(1 == arr[5].length);
+        Assertions.assertTrue(null == arr[5][0]);
     }
 
 }
