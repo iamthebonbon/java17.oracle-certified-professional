@@ -16,6 +16,7 @@ public class ResourceBundleTest {
         Assertions.assertEquals("halo from ru", bundleRu.getString("halo"));
         ResourceBundle bundleKg = ResourceBundle.getBundle("messages/messages", new Locale("kg"));
         Assertions.assertEquals("halo from default", bundleKg.getString("halo"));
+        String integer = bundleDefault.getString("integer");
     }
 
 }
