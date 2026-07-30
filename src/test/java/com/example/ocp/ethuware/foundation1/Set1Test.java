@@ -37,8 +37,8 @@ public class Set1Test {
         // new int[] is not required because it's inferred during compilation
         int[] ints = {1, 2, 3};
         int ints2[] = {1, 2, 3}; // c-style array declaration
-        Assertions.assertEquals("[I", ints.getClass().getName());
-        Assertions.assertEquals("[I", ints2.getClass().getName());
+        Assertions.assertEquals("[I.java", ints.getClass().getName());
+        Assertions.assertEquals("[I.java", ints2.getClass().getName());
     }
 
     @Test
@@ -46,8 +46,8 @@ public class Set1Test {
         Object integer = 1; // boxed integer during compilation
         Object arrayOfPrimitiveIntegers = new int[10]; // array of primitives can't be array of objects
         Assertions.assertEquals("java.lang.Integer", integer.getClass().getName());
-        Assertions.assertEquals("[I", arrayOfPrimitiveIntegers.getClass().getName()); // arrays of ints
-        Assertions.assertTrue(List.of(arrayOfPrimitiveIntegers).toString().startsWith("[[I")); // collection of ints-array
+        Assertions.assertEquals("[I.java", arrayOfPrimitiveIntegers.getClass().getName()); // arrays of ints
+        Assertions.assertTrue(List.of(arrayOfPrimitiveIntegers).toString().startsWith("[[I.java")); // collection of ints-array
     }
 
     @Test
@@ -88,7 +88,7 @@ public class Set1Test {
     public void question20_1() {
         if (false) ;
         {
-            Assertions.assertEquals("I'm called always", "I'm called always");
+            Assertions.assertEquals("I.java'm called always", "I.java'm called always");
         }
     }
 

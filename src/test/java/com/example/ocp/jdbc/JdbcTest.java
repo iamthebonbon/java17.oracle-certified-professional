@@ -57,7 +57,7 @@ public class JdbcTest {
         } catch (Exception e) {
             LOGGER.info(e.getMessage());
         } finally {
-            LOGGER.info("I'm here");
+            LOGGER.info("I.java'm here");
         }
     }
 

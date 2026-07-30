@@ -12,7 +12,7 @@ public class VariableDeclarationTest {
     public void testEmptyArray() {
         int[] a = new int[0];
         Assertions.assertTrue(0 == a.length);
-        Assertions.assertEquals("[I", a.getClass().getName());
+        Assertions.assertEquals("[I.java", a.getClass().getName());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class VariableDeclarationTest {
         int[] a = new int[1];
         Assertions.assertTrue(1 == a.length);
         Assertions.assertTrue(0 == a[0]);
-        Assertions.assertEquals("[I", a.getClass().getName());
+        Assertions.assertEquals("[I.java", a.getClass().getName());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class VariableDeclarationTest {
     }
 
     /**
-     * I can't combine size with initial values. Either or
+     * I.java can't combine size with initial values. Either or
      */
     @Test
     public void arrayDeclarationTest() {

@@ -79,7 +79,7 @@ public class StoredProcedureTest {
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {
-            LOGGER.info("I'm here");
+            LOGGER.info("I.java'm here");
         }
     }
 
