@@ -3,9 +3,9 @@ package com.example.ocp.interfaces;
 public class InterfaceInheritaceTest {
 
     interface Measurement {
-        public default int getLength() {
-            return 0;
-        }
+//        public default int getLength() {
+//            return 0;
+//        }
         public static int getLength() {
             return 10;
         }

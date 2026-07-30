@@ -35,4 +35,19 @@ public class PathsTest {
         Assertions.assertTrue(pathB.relativize(pathC).toString().equals("../../halo.txt"));
     }
 
+    @Test
+    public void resolveTest() {
+        Path pathB = Paths.get("/a/b/d.txt");
+        Path pathC = Paths.get("a/halo.txt");
+        Assertions.assertTrue(pathB.resolve(pathC).toString().equals("/a/b/d.txt/a/halo.txt"));
+        Path pathD = Paths.get("/a/halo.txt");
+        Assertions.assertTrue(pathB.resolve(pathD).toString().equals("/a/halo.txt"));
+    }
+
+    @Test
+    public void getFileName() {
+        Path pathB = Paths.get("/a/b/d.txt");
+        Assertions.assertTrue(pathB.getFileName().toString().equals("d.txt"));
+    }
+
 }
