@@ -46,6 +46,7 @@ public class FileTest {
     @Test
     public void createFile() throws IOException {
         File file = new File(UUID.randomUUID().toString());
+        file.deleteOnExit();
         if (file.createNewFile()) {
             String path = file.getAbsolutePath();
             Path path1 = Paths.get(path);
