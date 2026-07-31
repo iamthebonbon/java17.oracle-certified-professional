@@ -12,7 +12,13 @@ public class CharacterTest {
         Assertions.assertTrue(c1 == c2);
         Character c3 = 150;
         Character c4 = 150;
+        char c5 = 'Ѐ';
+        Character c6 = 1024;
+        int i = c6;
         Assertions.assertFalse(c3 == c4);
+        Assertions.assertTrue(150 == c4);
+        Assertions.assertTrue(c6 == c5);
+        Assertions.assertTrue(i == 1024);
     }
 
 }
