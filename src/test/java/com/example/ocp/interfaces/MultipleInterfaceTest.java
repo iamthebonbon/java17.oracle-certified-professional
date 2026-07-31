@@ -40,5 +40,9 @@ public class MultipleInterfaceTest {
         default int b() {
             return 2;
         }
+
+        private static void privateAction() {
+            
+        }
     }
 }
