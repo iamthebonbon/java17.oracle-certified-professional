@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.sql.SQLException;
 
 public class ExceptionInFinallyTest {
@@ -32,6 +33,18 @@ public class ExceptionInFinallyTest {
             throw new CloneNotSupportedException();
             // CloneNotSupportedException is a checked exception.
         }
+    }
+
+    public void exceptionTest() {
+        try {
+//            throw new AccessDeniedException("");
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void exceptionTestMethod() {
+
     }
 
 }
