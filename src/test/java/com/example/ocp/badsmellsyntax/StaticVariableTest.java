@@ -20,10 +20,18 @@ public class StaticVariableTest {
         public static int m() {
             return 2;
         }
+
+//        public char a() {
+//            return 'A';
+//        }
     }
 
     public static int m() {
         return 1;
+    }
+
+    public static char a() {
+        return 'a';
     }
 
 
