@@ -35,7 +35,7 @@ public class ExceptionInFinallyTest {
         }
     }
 
-    public void exceptionTest() {
+    public void exceptionTest() throws IOException {
         try {
 //            throw new AccessDeniedException("");
         } catch (Exception e) {

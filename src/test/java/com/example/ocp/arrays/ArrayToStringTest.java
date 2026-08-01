@@ -23,4 +23,16 @@ public class ArrayToStringTest {
         );
     }
 
+    @Test
+    public void test() {
+        int[] array1, array2[];
+        int[][] array3 = new int[][]{};
+        int[] array4[] = new int[][]{}, array5[];
+
+        array2 = array3;
+        array2 = array4;
+        array5 = array3;
+        Assertions.assertTrue(1 == 1);
+    }
+
 }
