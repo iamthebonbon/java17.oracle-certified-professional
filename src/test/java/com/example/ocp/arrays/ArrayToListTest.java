@@ -32,6 +32,18 @@ public class ArrayToListTest {
         Assertions.assertTrue(
                 Stream.of("1", "2", "30").collect(Collectors.summingInt(x -> Integer.valueOf(x, 4))) == 15
         );
+        Assertions.assertTrue(
+                Stream.of("1", "2", "30").collect(Collectors.summingLong(x -> Integer.valueOf(x, 4))) == 15
+        );
+        Assertions.assertTrue(
+                Stream.of("1", "2", "30").collect(Collectors.summingLong(x -> Long.valueOf(x, 4))) == 15
+        );
+        Assertions.assertTrue(
+                Stream.of("1.0", "2.0", "3.0").collect(Collectors.summingDouble(x -> Double.valueOf(x))) == (int) 6.3
+        );
+        Assertions.assertTrue(
+                Stream.of("1.0", "2.0", "3.0").collect(Collectors.summingDouble(x -> Double.valueOf(x))) == (int) 6.9
+        );
     }
 
 }
