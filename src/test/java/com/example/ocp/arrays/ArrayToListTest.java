@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -43,6 +44,20 @@ public class ArrayToListTest {
         );
         Assertions.assertTrue(
                 Stream.of("1.0", "2.0", "3.0").collect(Collectors.summingDouble(x -> Double.valueOf(x))) == (int) 6.9
+        );
+
+        Function<String, Integer> ff = String::length;
+        Assertions.assertTrue(
+                Stream.of("1.0", "2.0", "3.0")
+                        .map(ff)
+                        .collect(Collectors.summarizingDouble(Double::valueOf)).toString()
+                        .equals("DoubleSummaryStatistics{count=3, sum=9.000000, min=3.000000, average=3.000000, max=3.000000}")
+        );
+
+        Assertions.assertTrue(
+                Stream.of("1.0", "2.0", "3.0")
+                        .mapToInt(Integer::valueOf)
+                        .count() == 3
         );
     }
 
