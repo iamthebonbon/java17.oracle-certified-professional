@@ -54,11 +54,12 @@ public class ArrayToListTest {
                         .equals("DoubleSummaryStatistics{count=3, sum=9.000000, min=3.000000, average=3.000000, max=3.000000}")
         );
 
-        Assertions.assertTrue(
-                Stream.of("1.0", "2.0", "3.0")
-                        .mapToInt(Integer::valueOf)
-                        .count() == 3
-        );
+//        Assertions.assertTrue(
+//                Stream.of("1.0", "2.0", "3.0")
+//                        .mapToInt(Integer::valueOf)
+//                        .asDoubleStream()
+//                        .average()
+//        );
     }
 
 }

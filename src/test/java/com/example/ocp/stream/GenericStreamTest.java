@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.logging.Logger;
 import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GenericStreamTest {
@@ -104,6 +104,16 @@ public class GenericStreamTest {
                         }
                 )[0];
         Assertions.assertEquals(6L, collect);
+    }
+
+    @Test
+    public void test2() {
+        Integer i = Integer.valueOf(1);
+        Function<Integer, Integer> localeStringFactory = i::compareTo;
+
+        Assertions.assertTrue(-1 == localeStringFactory.apply(2));
+
+
     }
 
 }
