@@ -23,5 +23,31 @@ public class BTest {
         DoubleBinaryOperator dbo = (double x, double y) -> x + y + 0;
         DoubleFunction<String> df = (double x) -> x + "";
         ToDoubleFunction<String> tdf = (String x) -> Double.parseDouble(x) + 0.0;
+
+        abstract class A {
+
+        }
+        final class B extends A {
+
+        }
+        record R() {
+            public R {
+
+            }
+
+            public R(int i) {
+                this();
+            }
+        }
+
+
+    }
+
+    sealed class S {
+
+    }
+
+    final class P extends S {
+
     }
 }
