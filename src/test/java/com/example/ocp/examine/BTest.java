@@ -50,4 +50,31 @@ public class BTest {
     final class P extends S {
 
     }
+
+    static interface I1 {
+        default void i() {
+
+        }
+
+        static void i2() {
+
+        }
+    }
+
+    static interface I2 {
+        void i();
+
+        static void i2() {
+
+        }
+    }
+
+    static class I1I2 implements I1, I2 {
+
+        @Override
+        public void i() {
+            I1.super.i();
+        }
+    }
+
 }
