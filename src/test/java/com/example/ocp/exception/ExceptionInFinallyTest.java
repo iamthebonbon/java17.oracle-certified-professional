@@ -11,8 +11,12 @@ public class ExceptionInFinallyTest {
 
     @Test
     public void test() {
-        Assertions.assertThrows(CloneNotSupportedException.class, this::exception);
-        Assertions.assertThrows(CloneNotSupportedException.class, this::noException);
+        Assertions.assertTrue(0 == Assertions.assertThrows(CloneNotSupportedException.class, this::exception).getSuppressed().length);
+        Assertions.assertTrue(0 == Assertions.assertThrows(CloneNotSupportedException.class, this::noException).getSuppressed().length);
+        Assertions.assertTrue(0 == Assertions.assertThrows(CloneNotSupportedException.class, this::tryWithResourcesExceptionFinally).getSuppressed().length);
+        Assertions.assertTrue(0 == Assertions.assertThrows(CloneNotSupportedException.class, this::tryWithResourcesExceptionCatch).getSuppressed().length);
+        Assertions.assertTrue(0 == Assertions.assertThrows(IllegalArgumentException.class, this::tryWithResourcesExceptionCatchFinally).getSuppressed().length);
+        Assertions.assertTrue(1 == Assertions.assertThrows(CloneNotSupportedException.class, this::tryWithResourcesException).getSuppressed().length);
     }
 
     private void exception() throws Exception {
@@ -35,16 +39,52 @@ public class ExceptionInFinallyTest {
         }
     }
 
-    public void exceptionTest() throws IOException {
-        try {
-//            throw new AccessDeniedException("");
-        } catch (Exception e) {
+    private void tryWithResourcesException() throws Exception {
+        try (var e = new E()) {
+            throw new CloneNotSupportedException();
+        } finally {
 
         }
     }
 
-    public void exceptionTestMethod() {
+    private void tryWithResourcesExceptionFinally() throws Exception {
+        try (var e = new E()) {
 
+        } finally {
+            throw new CloneNotSupportedException();
+        }
+    }
+
+    private void tryWithResourcesExceptionCatch() throws Exception {
+        try (var e = new E()) {
+
+        } catch (Exception e) {
+            throw new CloneNotSupportedException();
+        } finally {
+
+        }
+    }
+
+    private void tryWithResourcesExceptionCatchFinally() throws Exception {
+        try (var e = new E()) {
+
+        } catch (Exception e) {
+            throw new CloneNotSupportedException();
+        } finally {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public static class A {
+
+    }
+
+    public record E() implements AutoCloseable {
+
+        @Override
+        public void close() {
+            throw new RuntimeException();
+        }
     }
 
 }
