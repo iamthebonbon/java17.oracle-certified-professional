@@ -20,6 +20,17 @@ class C implements B {
     public String staticCommon() {
         return "";
     }
+
+    static String staticC() {
+        return "staticCommonA";
+    }
+}
+
+class D extends C {
+
+//    String staticC() {
+//        return "staticCommonA";
+//    }
 }
 
 
