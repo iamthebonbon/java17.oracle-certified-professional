@@ -1,6 +1,6 @@
-package com.example.ocp.ethuware;
+package com.example.ocp.ethuware._1481$2;
 
-public class $1481 {
+public class $1481Test {
 }
 
 interface A {
