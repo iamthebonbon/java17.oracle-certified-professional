@@ -14,6 +14,9 @@ public class DoubleDivisionTest {
         Assertions.assertTrue(
                 1 / 0.0 == Double.POSITIVE_INFINITY
         );
+        Assertions.assertTrue(
+                Double.isNaN(0.0 / 0.0)
+        );
         Assertions.assertThrows(
                 ArithmeticException.class, () -> {
                     int i = 1 / 0;
