@@ -27,6 +27,7 @@ class C implements B {
 }
 
 class D extends C {
+    String r = staticC();
 
 //    String staticC() {
 //        return "staticCommonA";
