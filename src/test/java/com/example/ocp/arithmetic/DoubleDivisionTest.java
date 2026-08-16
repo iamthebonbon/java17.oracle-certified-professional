@@ -11,6 +11,9 @@ public class DoubleDivisionTest {
         Assertions.assertTrue(
                 String.format("%.2f", .125).equals("0.13")
         );
+        Assertions.assertTrue(
+                1 / 0.0 == Double.POSITIVE_INFINITY
+        );
     }
 
 }
