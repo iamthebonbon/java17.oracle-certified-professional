@@ -1,6 +1,6 @@
-package com.example.ocp.selfcheck.selfcheck2._2;
+package com.example.ocp.selfcheck.override._2;
 
-import com.example.ocp.selfcheck.selfcheck2._1.C1;
+import com.example.ocp.selfcheck.override._1.C1;
 
 import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
@@ -20,6 +20,14 @@ public class C2 extends C1 {
 
     public List<Integer> wildcards(Collection<? extends Number> ints) {
         return new ArrayList<Integer>();
+    }
+
+    public Integer reference(Number i) {
+        return 0;
+    }
+
+    public Integer reference(Integer i) {
+        return 0;
     }
 
 }
