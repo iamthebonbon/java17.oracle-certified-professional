@@ -22,12 +22,20 @@ public class C2 extends C1 {
         return new ArrayList<Integer>();
     }
 
-    public Integer reference(Number i) {
-        return 0;
+    public Long reference(Number i) {
+        return 0L;
     }
 
     public Integer reference(Integer i) {
         return 0;
+    }
+
+    public long primitive(Number number) {
+        return Integer.valueOf(1);
+    }
+
+    public long primitive(Integer number) {
+        return Integer.valueOf(1);
     }
 
 }

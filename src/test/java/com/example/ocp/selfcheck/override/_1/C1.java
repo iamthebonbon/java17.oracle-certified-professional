@@ -18,4 +18,8 @@ public class C1 {
     public Number reference(Number number) {
         return BigDecimal.valueOf(1);
     }
+
+    public long primitive(Number number) {
+        return Integer.valueOf(1);
+    }
 }
