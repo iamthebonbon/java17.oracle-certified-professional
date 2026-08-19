@@ -1,4 +1,4 @@
-package com.example.ocp.selfcheck._1;
+package com.example.ocp.selfcheck.staticinheritance._1;
 
 public interface I {
     int I = 0;
