@@ -17,13 +17,16 @@ public class A {
                 ((A) b).i == 10
         );
         Assertions.assertTrue(
+                ((B) b).i == 20
+        );
+        Assertions.assertTrue(
                 ((A) b).i() == 20
         );
     }
 }
 
 class B extends A {
-    private int i = 20;
+    int i = 20;
 
     int i() {
         return 20;
