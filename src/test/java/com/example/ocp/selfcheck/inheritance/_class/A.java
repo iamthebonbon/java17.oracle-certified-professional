@@ -17,7 +17,10 @@ public class A {
                 ((A) b).i == 10
         );
         Assertions.assertTrue(
-                ((B) b).i == 20
+                b.i == 20
+        );
+        Assertions.assertTrue(
+                b.A2 == 22
         );
         Assertions.assertTrue(
                 ((A) b).i() == 20
@@ -25,7 +28,11 @@ public class A {
     }
 }
 
-class B extends A {
+interface A2 {
+    int A2 = 22;
+}
+
+class B extends A implements A2 {
     int i = 20;
 
     int i() {
