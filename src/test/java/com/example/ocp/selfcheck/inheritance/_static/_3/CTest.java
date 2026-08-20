@@ -1,8 +1,8 @@
-package com.example.ocp.selfcheck.staticinheritance._3;
+package com.example.ocp.selfcheck.inheritance._static._3;
 
-import com.example.ocp.selfcheck.staticinheritance._1.I;
-import com.example.ocp.selfcheck.staticinheritance._2.C1;
-import com.example.ocp.selfcheck.staticinheritance._2.C2;
+import com.example.ocp.selfcheck.inheritance._static._1.I;
+import com.example.ocp.selfcheck.inheritance._static._2.C1;
+import com.example.ocp.selfcheck.inheritance._static._2.C2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

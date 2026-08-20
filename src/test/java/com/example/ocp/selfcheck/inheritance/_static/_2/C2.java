@@ -1,4 +1,4 @@
-package com.example.ocp.selfcheck.staticinheritance._2;
+package com.example.ocp.selfcheck.inheritance._static._2;
 
 public class C2 extends C1 {
     public static final int I = 2;
