@@ -17,6 +17,14 @@ public class $1Test {
                 Stream.of("1", "2").reduce("halo", String::concat)
                         .equals("halo12")
         );
+        Assertions.assertTrue(
+                Stream.of().reduce("halo", (var a, var b) -> a + String.valueOf(b))
+                        .equals("halo")
+        );
+        Assertions.assertTrue(
+                Stream.of().reduce("halo", (var a, var b) -> a + String.valueOf(b))
+                        == ("halo")
+        );
         Assertions.assertThrows(
                 NoSuchElementException.class,
                 () -> Stream.of().reduce((a, b) -> a).get()
