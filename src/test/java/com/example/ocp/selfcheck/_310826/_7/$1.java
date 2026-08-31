@@ -1,4 +1,4 @@
-package com.example.ocp.selfcheck._310826._7._6;
+package com.example.ocp.selfcheck._310826._7;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
