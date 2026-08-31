@@ -48,6 +48,7 @@ public class $3 {
                         ZoneOffset.of("+05:00")
                 ).format(DateTimeFormatter.ofPattern("yy-MM-dd'T'HH:mm:ss"))
         );
+
         Assertions.assertEquals(
                 "26-08-30T19:00:00",
                 LocalDateTime.ofInstant(
